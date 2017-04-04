@@ -1,0 +1,122 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Codestock",
+		"_postman_id": "2791de2d-0cfe-2ae4-9541-671874929acb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"request": {
+				"url": "localhost:1337/event",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Event",
+			"request": {
+				"url": "localhost:1337/event",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Codestock 2017\",\n\t\"startDate\": \"05-05-2017\",\n\t\"endDate\": \"05-06-2017\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Session",
+			"request": {
+				"url": "localhost:1337/session",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Rapid Api Dev With Node and Sails\",\n\t\"startDate\": \"05-05-2017 14:00\",\n\t\"endDate\": \"05-05-2017 15:00\",\n\t\"room\": \"\",\n\t\"givenAt\": 1,\n\t\"sessionGivenBy\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Session",
+			"request": {
+				"url": "localhost:1337/session",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Rapid Api Dev With Node and Sails\",\n\t\"startDate\": \"05-05-2017 14:00\",\n\t\"endDate\": \"05-05-2017 15:00\",\n\t\"room\": \"\",\n\t\"givenAt\": 4,\n\t\"sessionGivenBy\": 4\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Speaker",
+			"request": {
+				"url": "localhost:1337/speaker",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Justin James\",\n\t\"bio\": \"\",\n\t\"spokeAt\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Speaker",
+			"request": {
+				"url": "localhost:1337/speaker",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Justin James\",\n\t\"bio\": \"\",\n\t\"spokeAt\": 4\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
