@@ -1,8 +1,8 @@
 {
-  "name": "rapidApiDevWithSailsDemo",
+  "name": "sailstalk",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Sails Demo App for a Conference for use with Sails Talks",
   "keywords": [],
   "dependencies": {
     "ejs": "2.3.4",
@@ -30,8 +30,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/rapidApiDevWithSailsDemo.git"
+    "url": "git://github.com/digitaldrummerj/SailsTalk.git"
   },
-  "author": "anonymous node/sails user",
-  "license": ""
+  "author": "Justin James",
+  "license": "MIT"
 }
