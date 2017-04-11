@@ -72,7 +72,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Rapid Api Dev With Node and Sails\",\n\t\"startDate\": \"05-05-2017 14:00\",\n\t\"endDate\": \"05-05-2017 15:00\",\n\t\"room\": \"\",\n\t\"givenAt\": 4,\n\t\"sessionGivenBy\": 4\n\t\n}"
+					"raw": "{\n\t\"name\": \"Rapid Api Dev With Node and Sails\",\n\t\"startDate\": \"05-05-2017 14:00\",\n\t\"endDate\": \"05-05-2017 15:00\",\n\t\"room\": \"\",\n\t\"givenAt\": 1,\n\t\"sessionGivenBy\": 1\n\t\n}"
 				},
 				"description": ""
 			},
@@ -112,7 +112,27 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Justin James\",\n\t\"bio\": \"\",\n\t\"spokeAt\": 4\n\t\n}"
+					"raw": "{\n\t\"name\": \"Justin James\",\n\t\"bio\": \"I am awesome and so is Sails!\",\n\t\"spokeAt\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Speaker With Sessions",
+			"request": {
+				"url": "localhost:1337/speaker/withSessions",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Justin James\",\n\t\"bio\": \"\",\n\t\"spokeAt\": 1\n\t\n}"
 				},
 				"description": ""
 			},
