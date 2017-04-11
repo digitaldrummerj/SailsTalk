@@ -8,7 +8,18 @@
 module.exports = {
 
   attributes: {
-   
+    name: {
+      required: true,
+      type: 'string'
+    },
+    startDate: {
+      required: true,
+      type: 'Date'
+    },
+    endDate: {
+      required: true,
+      type: 'Date'
+    }
   }
 };
 

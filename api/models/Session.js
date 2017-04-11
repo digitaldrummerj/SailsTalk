@@ -13,7 +13,7 @@ module.exports = {
     },
     sessionGivenBy: {
       collection: 'speaker',
-      via: 'session'
+      via: 'sessions'
     }
   }
 };

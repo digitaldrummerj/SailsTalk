@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-  sessions: {
+  session: {
     model: 'session'
     }
   }

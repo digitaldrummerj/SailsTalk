@@ -34,6 +34,10 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+  'GET /speaker/withsessions': {
+    controller: 'SpeakerController',
+    action: 'findWithSessions'
   }
 
   /***************************************************************************
