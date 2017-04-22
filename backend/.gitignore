@@ -97,6 +97,8 @@ lib-cov
 *.out
 *.pid
 npm-debug.log
+.npm/
+.bash_history
 
 
 
