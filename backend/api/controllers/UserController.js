@@ -42,7 +42,6 @@ module.exports = {
             req.session.userId = createdUser.id;
 
             return res.ok();
-
           }
         });
       });
@@ -156,17 +155,20 @@ module.exports = {
   },
 
   findOne: function (req, res) {
-    User.find({
+    
+    User.findOne({
       id: req.session.userId
-    }, function (err, user) {
+    })
+    .populate('todos')
+      .exec(function (err, user) {
+        if (err) return res.negotiate(err);
 
-      if (err) return res.negotiate(err);
-      if (user.length === 0) {
-        return res.notFound();
-      }
+        if (user.length === 0) {
+          return res.notFound();
+        }
 
-      return res.json(user);
-    });
+        return res.json(user);
+      });
   },
   changePassword: function (req, res) {
 

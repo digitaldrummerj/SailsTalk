@@ -8,7 +8,17 @@
 module.exports = {
 
   attributes: {
-    byUser: {
+    'item': {
+      type: 'string',
+      required: true
+    },
+    'dueDate': {
+      type: 'Date'
+    },
+    'notes': {
+      type: 'string'
+    },
+    userId: {
       model: 'User'
     }
   }

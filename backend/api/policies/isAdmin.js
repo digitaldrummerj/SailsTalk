@@ -10,16 +10,13 @@
 module.exports = function (req, res, next) {
 
   if (!req.session.userId) {
-    return res.forbidden('You are not permitted to perform this action.');
+    return res.forbidden('Pleae login.');
   }
 
   User.findOne(req.session.userId).exec(function parseResults(err, result) {
     if (err) return res.serverError(err);
     if (!result) return res.forbidden('You are not permitted to perform this action.');
-    
-    sails.log.debug('result', result);
-    sails.log.debug('is Admin', result.admin);
-    
+        
     if (result.admin) {
       return next();
     } else {

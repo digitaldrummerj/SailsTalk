@@ -27,17 +27,16 @@ module.exports = {
       type: 'boolean'
     },
 
-     todos: {
+    todos: {
       collection: 'todo',
-      via: 'byUser' 
+      via: 'userId'
     },
 
-    toJSON: function() {
+    toJSON: function () {
       var obj = this.toObject();
       delete obj.password;
       delete obj.confirmation;
       delete obj.encryptedPassword;
-      delete obj.todos;
       return obj;
     }
   }
