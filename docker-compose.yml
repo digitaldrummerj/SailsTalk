@@ -1,5 +1,20 @@
 version: '3.0'
 services:
+  web:
+    image: "digitaldrummerj/angular-cli"
+    ports:
+      - "4200:4200"
+      - "49153:49153"
+      - "9222:9222"
+      - "9876:9876"
+    links:
+      - "sails"
+    volumes:
+      - ./frontend:/home/app
+    restart: always
+    environment:
+      - NODE_ENV=dev
+    network_mode: "default"
   sails:
     image: "digitaldrummerj/sails"
     ports:
