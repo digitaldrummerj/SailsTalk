@@ -1,0 +1,31 @@
+version: '3.0'
+services:
+  sails:
+    image: "digitaldrummerj/sails"
+    ports:
+     - "1337:1337"
+    links:
+       - "postgres"
+       - "mongo"
+    volumes:
+        - ./backend:/home/app
+    command: ["sails", "lift"]
+    restart: always
+    environment:
+       - NODE_ENV=dev
+    network_mode: "default"
+  postgres:
+    image: "postgres"
+    restart: always
+
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=sails
+    network_mode: "default"
+  mongo:
+     ports:
+      - "27017:27017"
+     image: "mongo"
+     restart: always
+     network_mode: "default"
