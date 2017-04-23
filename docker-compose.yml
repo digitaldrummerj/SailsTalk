@@ -7,8 +7,10 @@ services:
       - "49153:49153"
       - "9222:9222"
       - "9876:9876"
-    # links:
-    #   - "sails"
+    depends_on:
+      - "sails"
+    links:
+      - "sails"
     volumes:
       - ./frontend:/home/app
     command: "ng serve --host 0.0.0.0 --port 4200 --poll "
@@ -19,6 +21,9 @@ services:
     image: "digitaldrummerj/sails"
     ports:
      - "1337:1337"
+    depends_on:
+       - "postgres"
+       - "mongo"
     links:
        - "postgres"
        - "mongo"
