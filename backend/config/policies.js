@@ -25,11 +25,9 @@ module.exports.policies = {
     findOne: ['isLoggedIn'],
     changePassword: ['isLoggedIn'],
     logout: ['isLoggedIn'], // you can't log out via the API if you're not logged in
-    
     find: ['isLoggedIn', 'isAdmin'],
     adminUpdateDeleted: ['isLoggedIn', 'isAdmin'],
     adminUpdate: ['isLoggedIn', 'isAdmin'],
-  
     login: ['isLoggedOut'] // you can't log in to a different account if you're already logged in (need to log out first)
   },
   TodoController: {

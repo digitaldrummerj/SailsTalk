@@ -12,15 +12,14 @@ module.exports = {
 
   login: function (req, res) {
     User.findOne({ email: req.param('email') }
-      , function foundUser(err, createdUser) {
+      , function foundUser(err, user) {
         if (err) return res.negotiate(err);
-        if (!createdUser) return res.notFound();
+        if (!user) return res.notFound();
 
         Passwords.checkPassword({
           passwordAttempt: req.param('password'),
-          encryptedPassword: createdUser.encryptedPassword
+          encryptedPassword: user.encryptedPassword
         }).exec({
-
           error: function (err) {
             return res.negotiate(err);
           },
@@ -30,18 +29,16 @@ module.exports = {
           },
 
           success: function () {
-
-            if (createdUser.deleted) {
+            if (user.deleted) {
               return res.forbidden("'Your account has been deleted.'");
             }
 
-            if (createdUser.banned) {
+            if (user.banned) {
               return res.forbidden("'Your account has been banned.'");
             }
 
-            req.session.userId = createdUser.id;
-
-            return res.ok();
+            req.session.user = user;
+            return res.json(200, user);
           }
         });
       });
@@ -49,7 +46,7 @@ module.exports = {
 
   logout: function (req, res) {
 
-    User.findOne(req.session.userId, function foundUser(err, user) {
+    User.findOne(req.session.user.id, function foundUser(err, user) {
       if (err) return res.negotiate(err);
       if (!user) {
         sails.log.verbose('Session refers to a user who no longer exists.');
@@ -57,7 +54,7 @@ module.exports = {
       }
 
       // log the user-agent out.
-      req.session.userId = null;
+      req.session.user = null;
 
       return res.ok();
     });
@@ -120,11 +117,9 @@ module.exports = {
               }
 
               // Log the user in
-              req.session.userId = createdUser.id;
+              req.session.user = createdUser;
 
-              return res.json({
-                username: createdUser.username
-              });
+              return res.json(200, createdUser);
             });
           }
         });
@@ -135,7 +130,7 @@ module.exports = {
   delete: function (req, res) {
 
     User.update({
-      id: req.session.userId
+      id: req.session.user.id
     }, {
         deleted: true
       }, function (err, removedUser) {
@@ -145,7 +140,7 @@ module.exports = {
           return res.notFound();
         }
 
-        req.session.userId = null;
+        req.session.user = null;
         return res.ok();
       });
   },
@@ -155,11 +150,11 @@ module.exports = {
   },
 
   findOne: function (req, res) {
-    
+
     User.findOne({
-      id: req.session.userId
+      id: req.session.user.id
     })
-    .populate('todos')
+      .populate('todos')
       .exec(function (err, user) {
         if (err) return res.negotiate(err);
 
@@ -170,6 +165,15 @@ module.exports = {
         return res.json(user);
       });
   },
+
+  userIdentity: function (req, res) {
+    if (req.session.user) {
+      return res.json(200, req.session.user);
+    } else {
+      return res.forbidden("Not Logged In");
+    }
+  },
+
   changePassword: function (req, res) {
 
     // Fallback to client-side required validation
@@ -192,7 +196,7 @@ module.exports = {
 
         User.update({
           // id: req.param('id')
-          id: req.session.userId
+          id: req.session.user.id
         }, {
             encryptedPassword: result
           }).exec(function (err, updatedUser) {
@@ -250,4 +254,5 @@ module.exports = {
       return res.ok();
     });
   },
+
 };

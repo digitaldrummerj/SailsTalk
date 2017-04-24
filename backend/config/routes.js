@@ -36,10 +36,11 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'PUT /login': 'UserController.login',
+  'PUT /user/login': 'UserController.login',
   'POST /logout': 'UserController.logout',
   'POST /user/signup': 'UserController.create',
-  'DELETEE /user/remove-profile': 'UserController.delete',
+  'GET /user/identity': 'UserController.userIdentity',
+  'DELETE /user/remove-profile': 'UserController.delete',
   'PUT /user/update-profile': 'UserController.update',
   'PUT /user/change-password': 'UserController.changePassword',
   'GET /user/admin-users': 'UserController.adminUsers',

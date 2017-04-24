@@ -9,11 +9,12 @@
  */
 module.exports = function (req, res, next) {
 
-  if (!req.session.userId) {
+  if (!req.session.user) {
     return res.forbidden('Pleae login.');
   }
 
-  User.findOne(req.session.userId).exec(function parseResults(err, result) {
+  
+  User.findOne(req.session.user.id).exec(function parseResults(err, result) {
     if (err) return res.serverError(err);
     if (!result) return res.forbidden('You are not permitted to perform this action.');
         
