@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-footer',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  public env = environment.production;
 
   constructor() { }
 

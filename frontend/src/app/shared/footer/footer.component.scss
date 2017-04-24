@@ -1,0 +1,18 @@
+@import "../../../assets/bootstrap/variables";
+
+footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 5px;
+    border-top: 1px solid $gray-light;
+    background-color: $gray-lighter;
+    font-size: 1em;
+    color: $dark-blue;
+    div {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}

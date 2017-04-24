@@ -1,3 +1,38 @@
-<p>
-  todo works!
-</p>
+<div class="container todo-wrapper">
+  <div class="page-header">
+    <h1 align="center">Todo List</h1>
+    <p class="text-center lead">You've got <em>{{openItemCount}}</em> things to do</p>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed">Toggle Form
+</button>
+  <div [ngbCollapse]="isCollapsed">
+    <form role="form" [formGroup]="addForm" (ngSubmit)="createTodo()" class="text-center">
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" formControlName="item" id="item" placeholder="Add Todo!" [(ngModel)]="todo.item"><button
+          type="submit" class="btn btn-primary btn-lg" [disabled]="!addForm.valid || submitting"><span *ngIf="!submitting">Add</span><span *ngIf="submitting">Adding...</span></button>
+      </div>
+      <div class="row errors">
+        <div class="col-md-12">
+          <div *ngIf="addForm.controls.item.errors && addForm.controls.item.dirty" class="alert alert-danger">
+            <div [hidden]="!addForm.controls.name.item.required">
+              Todo item is required
+            </div>
+          </div>
+
+          <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            There was an error submitting your todo. Please try again.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="todo" *ngFor="let todoItem of todoList">
+        <span class="pull-left" (click)="completeTodo(todoItem)"><i [className]="todoItem.completed ? 'intelicon-check-box' : 'intelicon-empty-box'"></i></span>
+        <span class="done-{{todoItem.completed}}">{{todoItem.item}} <small>created: {{todoItem.createdAt | date:'short'}}</small></span>
+        <span class="pull-right" (click)="deleteTodo(todoItem)"><i class="intelicon-close-max"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

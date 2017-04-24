@@ -1,0 +1,55 @@
+ @import "../../assets/bootstrap/variables";
+
+ .todo-wrapper {
+     width: 100%;
+
+     .ng-valid:not(form) {
+         border-left: 5px solid $green;
+     }
+
+     .ng-invalid:not(form) {
+         border-left: 5px solid $red;
+     }
+
+     div.todo {
+         padding-bottom: .2em;
+         padding-top: .2em;
+         border-bottom: 1px solid $gray-light; 
+         font-size: 1.4em;
+
+         small {
+             font-size: .7em;
+             color: lightgrey;
+         }
+
+         i {
+             width: 40px;
+             padding-right: 10px;
+             vertical-align: middle
+         }
+
+         .done-true {
+             text-decoration: line-through;
+             color: $gray-light;
+         }
+     }
+
+     .errors {
+        padding-top: 10px;
+        padding-bottom: 10px;
+     }
+
+     form {
+         padding-bottom: 1em;
+         input[type="text"] {
+             width: 80%;
+             float: left;
+             font-size: 2em;
+             margin-right: 1%;
+         }
+
+         button {
+             width: 19%;
+         }
+     }
+ }

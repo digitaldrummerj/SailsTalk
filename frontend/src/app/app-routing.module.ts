@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { TodoComponent } from './todo/todo.component';
+import { SigninComponent } from './signin/signin.component';
+import { IsSignedInGuard, IsLoggedOutGuard } from './shared/guards';
 const routes: Routes = [
   {
     path: '',
-    children: []
-  }
+    children: [],
+    component: TodoComponent,
+    canActivate: [IsSignedInGuard]
+  },
+  { path: 'login', component: SigninComponent, canActivate: [IsLoggedOutGuard] }
+  // { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]  }, 
+  // { path: 'unauthorized', component: NotAuthorizedComponent }, 
+  // { path: '**', component: NotFoundComponent }
+
 ];
 
 @NgModule({
