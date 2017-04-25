@@ -15,12 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoService } from './shared/services/todo.service'
 import { AuthService } from './shared/services/auth.service';
 import { SigninComponent } from './signin/signin.component';
-import { SignoutComponent } from './signout/signout.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { IsAdminGuard, IsSignedInGuard, IsLoggedOutGuard } from './shared/guards';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +27,8 @@ import { LoginComponent } from './login/login.component';
     TodoComponent,
     TodoDetailsComponent,
     SigninComponent,
-    SignoutComponent,
     SignupComponent,
     ProfileComponent,
-    EditProfileComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
