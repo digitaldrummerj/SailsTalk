@@ -18,7 +18,6 @@ export class SigninComponent implements OnInit {
   login(formValues) {
     this.authService.login(formValues.email, formValues.password)
       .subscribe(result => {
-        console.log(result);
         if (!result) {
           this.loginInvalid = true;
         } else {
@@ -26,4 +25,4 @@ export class SigninComponent implements OnInit {
         }
       });
   }
-}
+} 

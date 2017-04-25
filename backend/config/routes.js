@@ -37,7 +37,7 @@ module.exports.routes = {
   },
 
   'PUT /user/login': 'UserController.login',
-  'POST /logout': 'UserController.logout',
+  'POST /user/logout': 'UserController.logout',
   'POST /user/signup': 'UserController.create',
   'GET /user/identity': 'UserController.userIdentity',
   'DELETE /user/remove-profile': 'UserController.delete',

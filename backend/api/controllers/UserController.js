@@ -50,7 +50,7 @@ module.exports = {
       if (err) return res.negotiate(err);
       if (!user) {
         sails.log.verbose('Session refers to a user who no longer exists.');
-        return res.redirect('/');
+        return res.notFound('User not found');
       }
 
       // log the user-agent out.
@@ -146,7 +146,16 @@ module.exports = {
   },
 
   update: function (req, res) {
-    return res.badRequest("Nothing to Update");
+    User.update(req.session.user.id, req.body)
+      .exec(function (err, user) {
+        if (err) return res.negotiate(err);
+
+        if (user.length === 0) {
+          return res.notFound();
+        }
+
+        return res.json(user);
+      });
   },
 
   findOne: function (req, res) {

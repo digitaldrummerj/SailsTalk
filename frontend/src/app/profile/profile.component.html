@@ -1,3 +1,28 @@
-<p>
-  profile works!
-</p>
+<div>
+  <h1>Edit Your Profile </h1>
+  <hr>
+  <div class="col-md-4">
+    <form autocomplete="off" novalidate [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)">
+      <div class="form-group" [ngClass]="{ 'error' : !validateFirstName() }">
+        <label for="firstName">First Name:</label>
+        <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.required">Required</em>
+        <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.pattern">Must start with a letter</em>
+        <input id="firstName" type="text" formControlName="firstName" class="form-control" placeholder="First Name..." />
+      </div>
+      <div class="form-group" [ngClass]="{ 'error' : !validateLastName() }">
+        <label for="lastName">Last Name:</label>
+        <em *ngIf="!validateLastName()">Required</em>
+        <input id="lastName" type="text" formControlName="lastName" class="form-control" placeholder="Last Name..." />
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+      <button type="button" class="btn btn-warning" style="float:right" (click)="logout()">Logout</button>
+    </form>
+    <div *ngIf="save" class="alert alert-success" role="alert">
+      Profile Saved
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    </div>
+  </div>
+</div>
