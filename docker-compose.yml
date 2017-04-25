@@ -1,4 +1,7 @@
 version: '3.0'
+volumes:
+   mongo-db:
+   postgres-db:
 services:
   web:
     image: "digitaldrummerj/angular-cli"
@@ -9,12 +12,12 @@ services:
       - "9876:9876"
     depends_on:
       - "sails"
+    working_dir: /home/app
     links:
       - "sails"
     volumes:
       - ./frontend:/home/app
     command: "ng serve --host 0.0.0.0 --port 4200 --poll "
-    restart: always
     environment:
       - NODE_ENV=dev
   sails:
@@ -30,19 +33,23 @@ services:
     volumes:
         - ./backend:/home/app
     command: ["sails", "lift"]
-    restart: always
     environment:
        - NODE_ENV=dev
   postgres:
     image: "postgres"
-    restart: always
-
     ports:
       - "5432:5432"
+    volumes:
+       - postgres-db:/data
     environment:
+      - PGDATA=/data
+      - POSTGRES_USER=sails
       - POSTGRES_PASSWORD=sails
+      - POSTGRES_DB=sails
   mongo:
      ports:
-      - "27017:27017"
+       - "27017:27017"
      image: "mongo"
-     restart: always
+     volumes: 
+       - mongo-db:/data/db
+       - mongo-db:/data/configdb
