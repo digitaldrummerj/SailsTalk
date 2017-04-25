@@ -36,6 +36,20 @@ export class AuthService {
       });
   }
 
+  signup(email: string, password: string) {
+    let loginInfo = { "email": email, "password": password };
+    return this.http.post(todoUrl, JSON.stringify(loginInfo), options)
+      .do((res: Response) => {
+        if (res) {
+          this.currentUser = <IUser>res.json();
+        }
+      })
+      .catch(error => {
+        console.log('login error', error)
+        return Observable.of(false);
+      });
+  }
+
   updateCurrentUser(firstName: string, lastName: string) {
     let profileInfo = { "firstName": firstName, "lastName": lastName };
     let id = this.currentUser.id;
