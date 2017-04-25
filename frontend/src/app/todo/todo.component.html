@@ -14,7 +14,7 @@
       <div class="row errors">
         <div class="col-md-12">
           <div *ngIf="addForm.controls.item.errors && addForm.controls.item.dirty" class="alert alert-danger">
-            <div [hidden]="!addForm.controls.name.item.required">
+            <div [hidden]="!addForm.controls.item.errors.required">
               Todo item is required
             </div>
           </div>
@@ -29,9 +29,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="todo" *ngFor="let todoItem of todoList">
-        <span class="pull-left" (click)="completeTodo(todoItem)"><i [className]="todoItem.completed ? 'intelicon-check-box' : 'intelicon-empty-box'"></i></span>
+        <span class="pull-left" (click)="completeTodo(todoItem)"><i [className]="todoItem.completed ? 'fa fa-check-square-o' : 'fa fa-square-o'"></i></span>
         <span class="done-{{todoItem.completed}}">{{todoItem.item}} <small>created: {{todoItem.createdAt | date:'short'}}</small></span>
-        <span class="pull-right" (click)="deleteTodo(todoItem)"><i class="intelicon-close-max"></i></span>
+        <span class="pull-right" (click)="deleteTodo(todoItem)"><i class="fa fa-trash"></i></span>
       </div>
     </div>
   </div>
