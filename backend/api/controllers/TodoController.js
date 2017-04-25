@@ -9,13 +9,13 @@ module.exports = {
   create: function createFn(req, res) {
     var body = req.body;
 
-    body.userId = req.session.userId;
+    body.userId = req.session.user.id;
     return Todo.create(body)
       .then(result => res.json(result))
       .catch(error => res.json(500, error));
   },
   find: function findFn(req, res) {
-    return Todo.find(req.session.userId)
+    return Todo.find({ userId: req.session.user.id})
       .then(result => res.json(result))
       .catch(error => res.json(500, error));
   },
@@ -25,7 +25,7 @@ module.exports = {
       return res.json(400, 'id is required');
     }
 
-    return Todo.findOne({ id: id, userId: req.session.userId })
+    return Todo.findOne({ id: id, userId: req.session.user.id })
       .then(result => res.json(result))
       .catch(error => res.json(500, error));
   },
@@ -35,7 +35,7 @@ module.exports = {
       return res.json(400, 'id is required');
     }
 
-    var userId = req.session.userId;
+    var userId = req.session.user.id;
     var body = req.body;
     body.userId = userId;
 
@@ -50,7 +50,7 @@ module.exports = {
       return res.json(400, 'id is required');
     }
 
-    return Todo.delete({ id: id , userId: req.session.userId })
+    return Todo.delete({ id: id , userId: req.session.user.id })
       .then(result => res.json(result))
       .catch(error => res.json(500, error));
   }
