@@ -4,6 +4,7 @@ import { TodoComponent } from './todo/todo.component';
 import { SigninComponent } from './signin/signin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
+import {  Error404Component } from './error404/error404.component';
 
 import { IsSignedInGuard, IsLoggedOutGuard } from './shared/guards';
 const routes: Routes = [
@@ -13,14 +14,14 @@ const routes: Routes = [
     component: TodoComponent,
     canActivate: [IsSignedInGuard]
   },
-  
-  { path: 'login', component: SigninComponent, canActivate: [IsLoggedOutGuard] },
-    { path: 'profile', component: ProfileComponent, canActivate: [IsSignedInGuard] },
-  { path: 'signup', component: SignupComponent, canActivate: [IsLoggedOutGuard] },
 
+  { path: 'login', component: SigninComponent, canActivate: [IsLoggedOutGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [IsSignedInGuard] },
+  { path: 'signup', component: SignupComponent, canActivate: [IsLoggedOutGuard] },
+  
   // { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]  }, 
   // { path: 'unauthorized', component: NotAuthorizedComponent }, 
-  // { path: '**', component: NotFoundComponent }
+   { path: '**', component: Error404Component}
 
 ];
 

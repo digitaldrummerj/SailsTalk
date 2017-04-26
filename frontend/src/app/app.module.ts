@@ -1,4 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
+;
+import { Error404Component } from './error404/error404.component'import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -18,6 +19,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IsAdminGuard, IsSignedInGuard, IsLoggedOutGuard } from './shared/guards';
+import { 404Component } from './404/404.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { IsAdminGuard, IsSignedInGuard, IsLoggedOutGuard } from './shared/guards
     SigninComponent,
     SignupComponent,
     ProfileComponent,
+    404Component, Error404Component,
   ],
   imports: [
     BrowserModule,
