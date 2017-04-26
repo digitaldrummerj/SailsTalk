@@ -10,17 +10,19 @@ module.exports = {
   attributes: {
     'item': {
       type: 'string',
-      required: true
+      required: true,
     },
+
     'dueDate': {
-      type: 'Date'
+      type: 'Date',
     },
+
     'notes': {
-      type: 'string'
+      type: 'string',
     },
+
     userId: {
-      model: 'User'
+      model: 'User',
     }
   }
 };
-
