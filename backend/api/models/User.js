@@ -12,24 +12,26 @@ module.exports = {
     email: {
       type: 'string',
       email: 'true',
-      unique: 'true'
+      unique: 'true',
     },
 
     encryptedPassword: {
-      type: 'string'
+      type: 'string',
     },
 
-    deleted: {
-      type: 'boolean'
+    firstName: {
+      type: 'string',
+      required: false,
     },
 
-    admin: {
-      type: 'boolean'
+    lastName: {
+      type: 'string',
+      required: false,
     },
 
     todos: {
       collection: 'todo',
-      via: 'userId'
+      via: 'userId',
     },
 
     toJSON: function () {
