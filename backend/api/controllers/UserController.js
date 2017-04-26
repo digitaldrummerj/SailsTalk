@@ -218,50 +218,6 @@ module.exports = {
           });
       }
     });
-  },
-
-  adminUsers: function (req, res) {
-
-    User.find().exec(function (err, users) {
-
-      if (err) return res.negotiate(err);
-
-      if (users.length === 0) return res.notFound();
-
-      var updatedUsers = _.map(users, function (user) {
-        user = {
-          id: user.id,
-          email: user.email,
-          admin: user.admin,
-          deleted: user.deleted,
-        };
-
-        return user;
-      });
-
-      return res.json(updatedUsers);
-    });
-  },
-
-  adminUpdate: function (req, res) {
-
-    User.update(req.param('id'), {
-      admin: req.param('admin')
-    }).exec(function (err, update) {
-
-      if (err) return res.negotiate(err);
-
-      return res.ok();
-    });
-  },
-
-  adminUpdateDeleted: function (req, res) {
-    User.update(req.param('id'), {
-      deleted: req.param('deleted')
-    }).exec(function (err, update) {
-      if (err) return res.negotiate(err);
-      return res.ok();
-    });
-  },
+  }
 
 };
