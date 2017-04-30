@@ -24,6 +24,7 @@ services:
     image: "digitaldrummerj/sails"
     ports:
      - "1337:1337"
+     - "9229:9229"
     depends_on:
        - "rapid-postgres"
        - "mongo"
