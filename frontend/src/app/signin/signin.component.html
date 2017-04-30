@@ -2,34 +2,37 @@
 <hr>
 <div>
   <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
-    <div class="form-group" >
+    <div class="form-group">
       <label for="userName">Email:</label>
       <em *ngIf="email?.invalid && (email?.touched  || mouseoverLogin)">Required</em>
-      
-      <input #email="ngModel"  (ngModel)="email" name="email" id="email" required email id="email" type="text" class="form-control" placeholder="Email..." />
-      <div *ngIf="email.invalid && (email.dirty || email.touched)"
-             class="alert alert-danger">
-            <div [hidden]="!email.errors.required">
-              Email is required
-            </div>
+
+      <input #email="ngModel" (ngModel)="email" minlength="6" name="email" id="email" required email type="text" class="form-control"
+        placeholder="Email..." />
+      <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+        <div [hidden]="!email.errors.required">
+          Email is required
         </div>
-    
+        <div [hidden]="!email.errors.email">
+          Must be an email address
+        </div>
+      </div>
     </div>
-    <div class="form-group" >
+
+    <div class="form-group">
       <label for="password">Password:</label>
       <em *ngIf="password?.invalid && (password?.touched || mouseoverLogin)">Required</em>
-      <input #password="ngModel" (ngModel)="password" name="password" id="password" required minlength="6" id="password" type="password" class="form-control"placeholder="Password..." />
-        <div *ngIf="password.invalid && (password.dirty || password.touched)"
-             class="alert alert-danger">
-            <div [hidden]="!password.errors.required">
-              Password is required
-            </div>
-            <div [hidden]="!password.errors.minlength">
-              Password must be at least 6 characters long.
-            </div>
+      <input #password="ngModel" (ngModel)="password" name="password" id="password" required id="password"
+        type="password" class="form-control" placeholder="Password..." />
+      <div *ngIf="minLengthError || (password.errors && (password.dirty || password.touched))" class="alert alert-danger">
+        <div [hidden]="minLengthError || !password.errors.required">
+          Password is required
         </div>
+        <div [hidden]="!minLengthError">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
     </div>
-    
+
     <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
     </span>
