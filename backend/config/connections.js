@@ -65,14 +65,6 @@ module.exports.connections = {
   //   database: 'your_mongo_db_name_here' //optional
   // },
 
-  mongo: {
-      adapter: 'sails-mongo',
-      host: "mongo",
-      port: "27017",
-      // user: 'sails',
-      // password: 'sails',
-      database: 'todo'
-  },
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

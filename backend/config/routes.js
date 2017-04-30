@@ -32,20 +32,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
-
-  'PUT /user/login': 'UserController.login',
-  'POST /user/logout': 'UserController.logout',
-  'POST /user/signup': 'UserController.create',
-  'GET /user/identity': 'UserController.userIdentity',
-  'DELETE /user/remove-profile': 'UserController.delete',
-  'PUT /user/update-profile': 'UserController.update',
-  'PUT /user/change-password': 'UserController.changePassword',
-  'GET /user/admin-users': 'UserController.adminUsers',
-  'PUT /user/update-admin/:id': 'UserController.adminUpdate',
-  'PUT /user/update-deleted/:id': 'UserController.adminUpdateDeleted'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

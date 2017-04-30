@@ -1,6 +1,7 @@
 {
   "vsicons.presets.angular": false,
-    "editor.fontSize":14,
+    "editor.fontSize":16,
+    "terminal.integrated.fontSize": 16,
     "editor.wordWrap": "on",
     "editor.tabSize": 2,
     "editor.formatOnType": true,
