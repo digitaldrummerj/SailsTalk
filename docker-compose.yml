@@ -25,22 +25,22 @@ services:
     ports:
      - "1337:1337"
     depends_on:
-       - "postgres"
+       - "rapid-postgres"
        - "mongo"
     links:
-       - "postgres"
+       - "rapid-postgres"
        - "mongo"
     volumes:
         - ./backend:/home/app
     command: ["sails", "lift"]
     environment:
        - NODE_ENV=dev
-  postgres:
-    image: "postgres"
+  rapid-postgres:
+    image: "rapid-postgres"
     ports:
       - "5432:5432"
     volumes:
-       - postgres-db:/data
+       - rapid-postgres-db:/data
     environment:
       - PGDATA=/data
       - POSTGRES_USER=sails
