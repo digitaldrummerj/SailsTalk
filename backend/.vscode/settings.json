@@ -1,6 +1,6 @@
 {
-  "vsicons.presets.angular": false,
-    "editor.fontSize":16,
+    "vsicons.presets.angular": false,
+    "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
     "editor.wordWrap": "on",
     "editor.tabSize": 2,
@@ -14,14 +14,15 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "**/node_modules": true
-    }
-,
-"window.zoomLevel": 3,
-"files.autoSave": "off",
-"editor.minimap.enabled": false,
-"vsicons.projectDetection.autoReload": true,
-"workbench.colorTheme": "Default Light+",
-"terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe"
-
+        "**/node_modules": true,
+        "**/.vscode": true,
+        "**/.bash_history": true,
+        "**/.ash_history": true
+    },
+    "window.zoomLevel": 3,
+    "files.autoSave": "off",
+    "editor.minimap.enabled": false,
+    "vsicons.projectDetection.autoReload": true,
+    "workbench.colorTheme": "Default Light+",
+    "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe"
 }
