@@ -17,10 +17,7 @@ const routes: Routes = [
 
   { path: 'login', component: SigninComponent, canActivate: [IsLoggedOutGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [IsSignedInGuard] },
-  { path: 'signup', component: SignupComponent, canActivate: [IsLoggedOutGuard] },
-  
-  // { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]  }, 
-  // { path: 'unauthorized', component: NotAuthorizedComponent }, 
+  { path: 'signup', component: SignupComponent, canActivate: [IsLoggedOutGuard] }, 
    { path: '**', component: Error404Component}
 
 ];
