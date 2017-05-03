@@ -10,8 +10,8 @@ cmd.exe /c  docker stop rapid-postgres
 cmd.exe /c run-postgres.bat
 cmd.exe /c run-angular.bat
 
-git status
-code backend
+
+cmd.exe /c code backend
 
 cmd.exe /c C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
 cmd.exe /c  chrome http://node-machine.org/machinepack-emailaddresses
