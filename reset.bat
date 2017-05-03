@@ -3,6 +3,7 @@
 git clean -f
 git checkout .
 git checkout master
+rimraf backend\.tmp
 
 REM STOP DOCKER CONTAINERS
 cmd.exe /c docker stop rapid-sails-pg 
