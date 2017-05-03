@@ -1,17 +1,22 @@
+@echo off
+
 git clean -f
 git checkout .
 git checkout master
-docker stop rapid-sails-pg 
-docker stop rapid-ng
-docker stop rapid-postgres
-run-postgres.bat
-run-angular.bat
+cmd.exe /c docker stop rapid-sails-pg 
+cmd.exe /c  docker stop rapid-ng
+cmd.exe /c  docker stop rapid-postgres
+
+cmd.exe /c run-postgres.bat
+cmd.exe /c run-angular.bat
+
 git status
 code backend
-call C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
-call chrome http://node-machine.org/machinepack-emailaddresses
-call chrome http://node-machine.org/machinepack-passwords
-call chrome http://node-machine.org/machinepacks
+
+cmd.exe /c C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
+cmd.exe /c  chrome http://node-machine.org/machinepack-emailaddresses
+cmd.exe /c  chrome http://node-machine.org/machinepack-passwords
+cmd.exe /c  chrome http://node-machine.org/machinepacks
 
 REM must be last since it start interactive session
-run-sailspostgres.bat
+cmd.exe /c run-sailspostgres.bat
