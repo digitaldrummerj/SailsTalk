@@ -27,7 +27,7 @@ start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.or
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/"
 
 REM OPEN PPT
-"..\presentations\Rapid Api Dev With Sails.pptx"
+start "C:\Program Files (x86)\Microsoft Office\root\Office16\POWERPNT.EXE" "..\presentations\Rapid Api Dev With Sails.pptx"
 
 REM START SAILS CONTAINER
 REM must be last since it start interactive session
