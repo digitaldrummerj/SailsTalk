@@ -3,12 +3,9 @@
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
     "editor.wordWrap": "on",
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.formatOnType": true,
-    "editor.insertSpaces": true,
     "editor.detectIndentation": true,
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -17,7 +14,8 @@
         "**/node_modules": true,
         "**/.vscode": true,
         "**/.bash_history": true,
-        "**/.ash_history": true
+        "**/.ash_history": true,
+        "**/.npm": true
     },
     "window.zoomLevel": 3,
     "files.autoSave": "off",
