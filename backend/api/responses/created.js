@@ -20,8 +20,5 @@ module.exports = function created(data, options) {
 
   sails.log.silly('res.created() :: Sending 201 ("CREATED") response');
 
-  // Set status code
-  res.status(201);
-
   return res.json(200, data);
 };
