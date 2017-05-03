@@ -5,10 +5,8 @@
     "editor.wordWrap": "on",
     "editor.tabSize": 2,
     "editor.formatOnType": true,
-    "editor.insertSpaces": true,
+    "editor.insertSpaces": false,
     "editor.detectIndentation": true,
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -17,12 +15,13 @@
         "**/node_modules": true,
         "**/.vscode": true,
         "**/.bash_history": true,
-        "**/.ash_history": true
+        "**/.ash_history": true,
+        "**/.npm": true
     },
     "window.zoomLevel": 3,
     "files.autoSave": "off",
     "editor.minimap.enabled": false,
-    "vsicons.projectDetection.autoReload": true,
+    "vsicons.projectDetection.autoReload": false,
     "workbench.colorTheme": "Default Light+",
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe"
 }
