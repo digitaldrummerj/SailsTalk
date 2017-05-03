@@ -19,10 +19,11 @@ REM OPEN SAILS CODE
 cmd /c code backend
 
 REM OPEN POSTMAN
-start C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
+REM start C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
+"C:\Users\user\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Postman\Postman.lnk" 
 
 REM START PGADMIN.   THIS TAKES A LONG TIME
-start "C:\Program Files (x86)\pgAdmin 4\v1\runtime\pgAdmin4.exe"
+"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\pgAdmin 4\pgAdmin 4 v1.lnk"
 
 REM OPEN CHROME TO NODE MACHINEPACKS
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" 
