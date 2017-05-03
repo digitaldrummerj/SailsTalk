@@ -12,14 +12,16 @@ cmd.exe /c run-angular.bat
 
 
 taskkill /IM code.exe
-start code backend
+cmd /c code backend
 
 start C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
 
 
 taskkill /IM chrome.exe
 
-start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" "http://node-machine.org/machinepack-passwords" "http://node-machine.org/machinepacks"
+start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" 
+start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-passwords" 
+start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepacks"
 
 REM must be last since it start interactive session
 cmd.exe /c run-sailspostgres.bat
