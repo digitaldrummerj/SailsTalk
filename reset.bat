@@ -14,7 +14,8 @@ cmd.exe /c run-angular.bat
 cmd.exe /c code backend
 
 cmd.exe /c C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
-cmd.exe /c  "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" "http://node-machine.org/machinepack-passwords" "http://node-machine.org/machinepacks"
+
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" "http://node-machine.org/machinepack-passwords" "http://node-machine.org/machinepacks"
 
 REM must be last since it start interactive session
 cmd.exe /c run-sailspostgres.bat
