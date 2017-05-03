@@ -24,6 +24,9 @@ start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.or
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-passwords" 
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/"
 
+REM OPEN PPT
+"..\presentations\Rapid Api Dev With Sails.pptx"
+
 REM START SAILS CONTAINER
 REM must be last since it start interactive session
 cmd.exe /c run-sailspostgres.bat
