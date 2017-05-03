@@ -21,6 +21,9 @@ cmd /c code backend
 REM OPEN POSTMAN
 start C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman.exe"
 
+REM START PGADMIN.   THIS TAKES A LONG TIME
+start "C:\Program Files (x86)\pgAdmin 4\v1\runtime\pgAdmin4.exe"
+
 REM OPEN CHROME TO NODE MACHINEPACKS
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" 
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-passwords" 
