@@ -1,7 +1,7 @@
 version: '3.0'
 volumes:
-   mongo-db:
-   postgres-db:
+   rapid-mongo-db:
+   rapid-postgres-db:
 services:
   web:
     image: "digitaldrummerj/angular-cli"
@@ -52,5 +52,5 @@ services:
        - "27017:27017"
      image: "mongo"
      volumes: 
-       - mongo-db:/data/db
-       - mongo-db:/data/configdb
+       - rapid-mongo-db:/data/db
+       - rapid-mongo-db:/data/configdb
