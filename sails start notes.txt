@@ -1,8 +1,6 @@
 * git status to make sure nothing important needs to be checked in
 * run reset.bat
-* open slides
 * open postman and clear out previous queries
-* open node machines website
 
 * set docker sails PS1=$
 * sails generate api users
