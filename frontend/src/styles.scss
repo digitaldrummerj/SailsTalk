@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+ html {
+     position: relative;
+     height: auto;
+     min-height: 100%;
+ }
+
+ body {
+     position: static;
+     height: auto;
+     margin: 0 0 60px; /* bottom = footer height */
+ }
+ 
