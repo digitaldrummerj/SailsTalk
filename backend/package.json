@@ -6,6 +6,8 @@
   "keywords": [],
   "dependencies": {
     "include-all": "^1.0.0",
+    "machinepack-emailaddresses": "^0.4.0",
+    "machinepack-passwords": "^2.3.0",
     "rc": "1.0.1",
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9"
@@ -22,6 +24,6 @@
   "author": "Justin James",
   "license": "MIT",
   "engines": {
-     "node": "6.10.2"
- }
+    "node": "6.10.2"
+  }
 }
