@@ -24,7 +24,7 @@ REM start C:\Users\user\AppData\Local\Postman\Update.exe --processStart "Postman
 
 REM START PGADMIN.   THIS TAKES A LONG TIME
 REM start "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\pgAdmin 4\pgAdmin 4"
-"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\pgAdmin 4\pgAdmin 4 v1.lnk"
+cmd /c "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\pgAdmin 4\pgAdmin 4 v1.lnk"
 
 REM OPEN CHROME TO NODE MACHINEPACKS
 start "c:\Progra~2\Google\Chrome\Application\chrome.exe" "http://node-machine.org/machinepack-emailaddresses" 
