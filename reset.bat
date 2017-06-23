@@ -7,13 +7,13 @@ git checkout master
 cmd /c rimraf backend\.tmp
 
 REM STOP DOCKER CONTAINERS
-cmd.exe /c docker stop rapid-sails-pg 
-cmd.exe /c  docker stop rapid-ng
+REM cmd.exe /c docker stop rapid-sails-pg 
+REM cmd.exe /c  docker stop rapid-ng
 cmd.exe /c  docker stop rapid-postgres
 
 REM START DB AND UI
 cmd.exe /c run-postgres.bat
-cmd.exe /c run-angular.bat
+REM cmd.exe /c run-angular.bat
 
 REM OPEN SAILS CODE
 cmd /c code backend
@@ -35,4 +35,4 @@ start "C:\Program Files (x86)\Microsoft Office\root\Office16\POWERPNT.EXE" "..\p
 
 REM START SAILS CONTAINER
 REM must be last since it start interactive session
-cmd.exe /c run-sailspostgres.bat
+REM cmd.exe /c run-sailspostgres.bat
