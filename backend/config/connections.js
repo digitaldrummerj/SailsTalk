@@ -37,7 +37,7 @@ module.exports.connections = {
   * MySQL is the world's most popular relational database.                   *
   * http://en.wikipedia.org/wiki/MySQL                                       *
   *                                                                          *
-  * Run: npm install sails-mysql                                             *
+  * Run: npm install sails-mysql --save                                             *
   *                                                                          *
   ***************************************************************************/
   // someMysqlServer: {
@@ -53,7 +53,7 @@ module.exports.connections = {
   * MongoDB is the leading NoSQL database.                                   *
   * http://en.wikipedia.org/wiki/MongoDB                                     *
   *                                                                          *
-  * Run: npm install sails-mongo                                             *
+  * Run: npm install sails-mongo --save                                             *
   *                                                                          *
   ***************************************************************************/
   // someMongodbServer: {
@@ -70,7 +70,7 @@ module.exports.connections = {
   * PostgreSQL is another officially supported relational database.          *
   * http://en.wikipedia.org/wiki/PostgreSQL                                  *
   *                                                                          *
-  * Run: npm install sails-postgresql                                        *
+  * Run: npm install sails-postgresql --save                                   *
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
@@ -83,7 +83,7 @@ module.exports.connections = {
   // }
   postgres: {
     adapter: 'sails-postgresql',
-    host: 'postgres',
+    host: 'rapid-postgres',
     user: 'sails',
     password: 'sails',
     database: 'sails'
