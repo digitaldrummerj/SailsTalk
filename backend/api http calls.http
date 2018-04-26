@@ -1,0 +1,105 @@
+### Create User
+### Password will be hashed
+
+POST http://localhost:1337/user
+content-type: application/json
+
+{
+  "email": "foo2@foo.com",
+  "password": "123456"
+}
+
+### Login User
+
+PATCH http://localhost:1337/user/login
+content-type: application/json
+
+{
+  "email": "foo@foo.com",
+  "password": "123456"
+}
+
+### Get Users (will only return logged in user)
+
+GET http://localhost:1337/user
+
+### Get Single User by Id (will only return logged in user) id
+### does not matter in this case because it will
+### use the logged in user's id
+
+GET http://localhost:1337/user/1
+
+### Logout User
+### id is irrelevant as it will use the session user id
+
+GET http://localhost:1337/user/logout
+
+### Get Logged in User with custom function
+
+GET http://localhost:1337/user/identity
+
+### Update User
+### if will valid that the id is the same as the logged in user id.
+### this is to stop from accidentally updating the wrong user or a user that
+### you don't own
+
+PATCH http://localhost:1337/user/6
+content-type: application/json
+
+{
+  "email": "foo@foo.com",
+  "password": "123456"
+}
+
+### Delete User
+
+DELETE http://localhost:1337/user/8
+
+### Create Todo Items
+
+POST http://localhost:1337/Todo
+content-type: application/json
+
+{
+  "item": "Todo Item 1"
+}
+
+### Get Todo Items
+
+GET http://localhost:1337/todo
+
+### Get One Todo Items
+
+GET http://localhost:1337/todo/1
+
+### Update Todo Item
+
+PATCH http://localhost:1337/todo/1
+content-type: application/json
+
+{
+  "item": "Updated Item"
+}
+
+### Complete Todo Item
+
+PATCH http://localhost:1337/todo/1
+content-type: application/json
+
+{
+  "completed": true
+}
+
+### Update and Complete Todo Item
+
+PATCH http://localhost:1337/todo/1
+content-type: application/json
+
+{
+  "item": "Updated 2nd Item",
+  "completed": true
+}
+
+### Delete Todo Item
+
+DELETE http://localhost:1337/todo/3

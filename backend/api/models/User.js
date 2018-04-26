@@ -1,45 +1,41 @@
 /**
  * User.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/#!documentation/models
+ * @description :: A model definition.  Represents a database table/collection/etc.
+ * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
 
   attributes: {
 
+    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
+    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
+    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
     email: {
       type: 'string',
-      email: 'true',
-      unique: 'true',
+      required: true,
+      unique: true,
+      isEmail: true,
     },
-
-    encryptedPassword: {
+    password: {
       type: 'string',
+      required: true,
     },
 
-    firstName: {
-      type: 'string',
-      required: false,
-    },
-
-    lastName: {
-      type: 'string',
-      required: false,
-    },
-
-    todos: {
+    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
+    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
+    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
+    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
+    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
+    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+    todoItems: {
       collection: 'todo',
-      via: 'userId',
-    },
-
-    toJSON: function () {
-      var obj = this.toObject();
-      delete obj.password;
-      delete obj.confirmation;
-      delete obj.encryptedPassword;
-      return obj;
+      via: 'owner'
     }
+  },
+  customToJSON: function(){
+    return _.omit(this, ['password']);
   }
 };
+

@@ -1,15 +1,40 @@
-module.exports = function alreadyInUse (err){
+/**
+ * alreadyInUse.js
+ *
+ * A custom response.
+ *
+ * Example usage:
+ * ```
+ *     return res.alreadyInUse();
+ *     // -or-
+ *     return res.alreadyInUse(optionalData);
+ * ```
+ *
+ * Or with actions2:
+ * ```
+ *     exits: {
+ *       somethingHappened: {
+ *         responseType: 'alreadyInUse'
+ *       }
+ *     }
+ * ```
+ *
+ * ```
+ *     throw 'somethingHappened';
+ *     // -or-
+ *     throw { somethingHappened: optionalData }
+ * ```
+ */
 
-  // Get access to `res`
-  // (since the arguments are up to us)
+module.exports = function alreadyInUse() {
+  // Get access to `req` and `res`
+  var req = this.req;
   var res = this.res;
 
-  if (err.invalidAttributes.email) {
-    return res.send(409, 'Email address is already taken by another user, please try again.');
-  }
+  // Define the status code to send in the response.
+  var statusCodeToSet = 409;
 
-  if (err.invalidAttributes.username) {
-    return res.send(409, 'Username is already taken by another user, please try again.');
-  }
-
+  return res
+    .status(statusCodeToSet)
+    .send('Email address is already taken by another user, please try again.');
 };
